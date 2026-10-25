@@ -56,11 +56,11 @@ pipeline{
                     steps {
 
                         archiveArtifacts(
-                            artifacts: 'target/addressbook.war'
+                            artifacts: 'target/addressbook.war',
                             fingerprint: true
                         )
                         stash(
-                            name: 'war-file'
+                            name: 'war-file',
                             includes: 'target/addressbook.war'
                         )
                     }
