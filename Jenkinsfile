@@ -76,12 +76,12 @@ pipeline{
                 sh '''
                     set -e
                     echo "===== ARTIFACT RECEIVED ====="
-                    ls -l incoming/addressbook.war
+                    ls -l target/addressbook.war
                     echo "===== REMOVE OLD VERSION ====="
                     rm -rf /opt/tomcat/webapps/addressbook
                     rm -f /opt/tomcat/webapps/addressbook.war
                     echo "===== DEPLOY NEW VERSION ====="
-                    cp incoming/addressbook.war /opt/tomcat/webapps/addressbook.war
+                    cp target/addressbook.war /opt/tomcat/webapps/addressbook.war
                     echo "===== WAIT FOR TOMCAT TO DEPLOY ====="
 
                     for i in $(seq 1 30); do
